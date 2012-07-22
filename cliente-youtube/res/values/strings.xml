@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ClienteYoutube!</string>
+    <string name="app_name">Cliente-youtube</string>
+    <string name="btn_main_reproducir">Reproducir</string>
+    <string name="tv_main_buscar">Buscar</string>
+    <string name="btn_main_buscar">Buscar video</string>
+    <string name="tv_main_info"></string>
+
+</resources>
