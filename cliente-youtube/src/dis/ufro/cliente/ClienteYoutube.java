@@ -26,13 +26,17 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ClienteYoutube extends Activity {
 
 	private Button btnBuscar;
 	private EditText etBusqueda;
+	private LinearLayout lyrespuesta;
+	private TextView tvresultados;
 	private ListView lvRespuesta;
 
 	private String URL = "https://gdata.youtube.com/feeds/api/videos?q=";
@@ -43,6 +47,8 @@ public class ClienteYoutube extends Activity {
 
 	private String[] idVideo;
 	private String[] titulo;
+	private String[] descripcion;
+	private String[] autor;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,8 @@ public class ClienteYoutube extends Activity {
 
 		btnBuscar = (Button) findViewById(R.id.btn_buscar);
 		etBusqueda = (EditText) findViewById(R.id.et_busqueda);
+		lyrespuesta = (LinearLayout) findViewById(R.id.ly_resultados);
+		tvresultados = (TextView) findViewById(R.id.info_resultados);
 		lvRespuesta = (ListView) findViewById(R.id.lv_main_respuesta_busqueda);
 
 		/*
@@ -143,6 +151,15 @@ public class ClienteYoutube extends Activity {
 				reproducirVideo(idVideo[posicion]);
 			}
 		});
+		numeroResultados();
+	}
+/**
+ * muestra el numero de elementos en la lista	
+ */
+	private void numeroResultados(){
+		int totalResultados = idVideo.length;
+		tvresultados.setText(totalResultados+" Resultados listados");
+		lyrespuesta.setVisibility(0);
 	}
 
 	/**

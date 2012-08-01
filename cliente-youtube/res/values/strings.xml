@@ -7,5 +7,6 @@
     <string name="tv_main_buscar">Buscar</string>
     <string name="btn_main_buscar">Buscar video</string>
     <string name="tv_main_info"></string>
+    <string name="tv_resultados">0 resultados listados</string>
 
 </resources>
