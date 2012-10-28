@@ -4,5 +4,6 @@
     <color name="main_titulo">#fff</color>
     <color name="main_lv_fondo">#333</color>
     <color name="main_text">#000</color>
+    <color name="main_txt_info">#aaa</color>
     
 </resources>

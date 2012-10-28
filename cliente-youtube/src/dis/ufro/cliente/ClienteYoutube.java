@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -53,6 +54,7 @@ public class ClienteYoutube extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 
 		btnBuscar = (Button) findViewById(R.id.btn_buscar);
@@ -86,8 +88,7 @@ public class ClienteYoutube extends Activity {
 	/**
 	 * LLamada al webservice de youtube
 	 * 
-	 * @param q
-	 *            String texto de busqueda
+	 * @param q String texto de busqueda
 	 */
 	public void callWebService(String q) {
 		HttpClient httpclient = new DefaultHttpClient();
@@ -118,6 +119,8 @@ public class ClienteYoutube extends Activity {
 			int largoArray = arrayResult.length();
 			idVideo = new String[largoArray];
 			titulo = new String[largoArray];
+			descripcion = new String[largoArray];
+			autor = new String[largoArray];
 
 			for (int i = 0; i < largoArray; i++) {
 
@@ -125,9 +128,14 @@ public class ClienteYoutube extends Activity {
 						.get("media$group");
 				JSONObject mediaGroup = (JSONObject) entry.get("media$title");
 				JSONObject idVideo = (JSONObject) entry.get("yt$videoid");
+				//JSONObject description = (JSONObject) entry.get("media$description");
+				//JSONObject autor = (JSONObject) entry.get("yt$videoid");
 
 				this.titulo[i] = mediaGroup.getString("$t");
+				//this.descripcion[i] = description.getString("$t");
+				//this.autor[i] = autor.getString("$t");
 				this.idVideo[i] = idVideo.getString("$t");
+				
 			}
 		} catch (JSONException e) {
 
@@ -140,9 +148,9 @@ public class ClienteYoutube extends Activity {
 	 * lista las respuestas a de la busqueda
 	 */
 	public void listarRespuesta() {
-		ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, titulo);
+		ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, titulo);
 		lvRespuesta.setAdapter(adaptador);
+		//lvRespuesta.setAdapter(new CustomAdapter(this, titulo, descripcion, autor));
 
 		lvRespuesta.setOnItemClickListener(new OnItemClickListener() {
 

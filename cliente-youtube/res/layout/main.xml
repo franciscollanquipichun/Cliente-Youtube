@@ -4,31 +4,37 @@
     android:layout_height="fill_parent"
     android:background="@color/main_fondo"
     android:orientation="vertical" >
-
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/background_ly_search"
         android:orientation="horizontal"
+        android:paddingBottom="5dip"
         android:paddingLeft="5dip"
         android:paddingRight="5dip"
         android:paddingTop="5dip" >
-
+
         <EditText
             android:id="@+id/et_busqueda"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.23"
+            android:layout_height="40dip"
+            android:layout_marginTop="2dip"
+            android:layout_weight="1"
+            android:background="@drawable/background_edtxt_search"
+            android:drawableLeft="@drawable/ic_youtube"
             android:ems="10"
-            android:inputType="text|textCapCharacters" >
-
-            <requestFocus />
-        </EditText>
-
+            android:hint="@string/hint_search_edtxt"
+            android:paddingLeft="2dip"
+            android:paddingRight="5dip" />
+
         <Button
             android:id="@+id/btn_buscar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="46dip"
+            android:layout_height="46dip"
+            android:background="@android:drawable/ic_menu_search"
             android:drawableRight="@android:drawable/ic_menu_search" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -39,13 +45,13 @@
         android:paddingLeft="15dip"
         android:paddingRight="15dip"
         android:visibility="gone" >
-
+
         <TextView
             android:id="@+id/info_resultados"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tv_resultados"
-            android:textColor="@color/main_text"
+            android:textColor="@color/main_txt_info"
             android:textColorHint="@color/main_text" />
 
         <View

@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_fondo"
     android:orientation="vertical" >
-
+
     <TextView
         android:id="@+id/video_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Titulo"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000"
         android:textStyle="bold" />
-
+
     <TextView
         android:id="@+id/video_descripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Descripcion"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000" />
+
     <TextView
         android:id="@+id/video_autor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Autor"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000" />
 
 </LinearLayout>
